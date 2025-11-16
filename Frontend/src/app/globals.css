@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* optional extras added */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+button:disabled {
+  @apply opacity-60 cursor-not-allowed;
+}
