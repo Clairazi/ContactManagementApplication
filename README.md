@@ -59,7 +59,7 @@ DATABASE_NAME=contact_management
 JWT_SECRET=your-secret-key
 JWT_EXPIRATION=24h
 
-PORT=3001
+PORT=4000
 NODE_ENV=development
 ```
 
@@ -77,7 +77,7 @@ Start backend:
 npm run start:dev
 ```
 
-Backend runs on **http://localhost:3001**
+Backend runs on **http://localhost:4000**
 
 ### 3. Frontend Setup
 
@@ -89,7 +89,7 @@ npm install
 Create `.env.local` file:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
+NEXT_PUBLIC_API_URL=http://localhost:4000
 ```
 
 Start frontend:
@@ -108,7 +108,7 @@ Open **http://localhost:3000** in your browser, register an account, and start m
 
 ## 📖 API Documentation
 
-### Base URL: `http://localhost:3001`
+### Base URL: `http://localhost:4000`
 
 ---
 
@@ -360,17 +360,6 @@ ContactManagementApplication/
 - SQL Injection Prevention
 
 ---
-
-## 📸 Screenshots
-
-### Login Page
-![Login](screenshots/login.png)
-
-### Contacts Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-### Add/Edit Contact
-![Contact Modal](screenshots/contact-modal.png)
 
 <div align="center">
 
