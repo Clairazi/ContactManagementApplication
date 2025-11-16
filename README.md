@@ -1,194 +1,71 @@
-# Contact Management Application
+# 📇 Contact Management Application
 
-A full-stack contact management application built with Nest.js, Next.js, PostgreSQL, and TypeScript.
+<div align="center">
 
-## Features
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)
 
-- 🔐 JWT-based authentication
-- 👥 Role-based access control (User/Admin)
-- 📇 Full CRUD operations for contacts
-- 🔍 Search and filter contacts
-- 📊 Pagination and sorting
-- 📸 Photo upload for contacts
-- 🌓 Dark/Light mode toggle
-- 📱 Responsive design
-- ✅ Form validation
-- 🎨 Tailwind CSS styling
+A modern, full-stack contact management application built with **Nest.js**, **Next.js**, **PostgreSQL**, and **TypeScript**.
 
-## Tech Stack
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [API Documentation](#-api-documentation) • [Screenshots](#-screenshots)
 
-**Backend:**
-- Nest.js
-- TypeORM
-- PostgreSQL
-- JWT Authentication
-- Multer (file uploads)
+</div>
 
-**Frontend:**
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Zustand (state management)
-- React Hook Form
-- Axios
+---
 
-## Prerequisites
+## ✨ Features
 
-- Node.js (v18 or higher)
-- PostgreSQL (v14 or higher)
-- npm or yarn
+- 🔐 **JWT-based Authentication** - Secure user authentication and authorization
+- 👥 **Role-based Access Control** - User and Admin roles with different permissions
+- 📇 **Full CRUD Operations** - Create, Read, Update, and Delete contacts
+- 🔍 **Advanced Search & Filter** - Search contacts by name, email, or phone
+- 📊 **Pagination & Sorting** - Efficient data handling with customizable sorting
+- 📸 **Photo Upload** - Upload and manage contact profile photos
+- 🌓 **Dark/Light Mode** - Toggle between themes for better user experience
+- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- ✅ **Form Validation** - Client and server-side validation
+- 🎨 **Modern UI** - Beautiful interface with Tailwind CSS
 
-## Setup Instructions
+---
 
-### 1. Clone the repository
+## 🛠️ Tech Stack
 
-### bash
-- git clone <repository-url>
-- cd contact-management-app
+### Backend
+- **[Nest.js](https://nestjs.com/)** - Progressive Node.js framework
+- **[TypeORM](https://typeorm.io/)** - ORM for TypeScript and JavaScript
+- **[PostgreSQL](https://www.postgresql.org/)** - Powerful relational database
+- **[JWT](https://jwt.io/)** - JSON Web Token authentication
+- **[Passport.js](http://www.passportjs.org/)** - Authentication middleware
+- **[Multer](https://github.com/expressjs/multer)** - File upload handling
+- **[Class Validator](https://github.com/typestack/class-validator)** - Validation decorators
 
-### 2. Backend Setup
+### Frontend
+- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[React Hook Form](https://react-hook-form.com/)** - Performant form validation
+- **[Axios](https://axios-http.com/)** - HTTP client
+- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
+- **[React Hot Toast](https://react-hot-toast.com/)** - Notifications
 
-### bash
-- cd backend
-- npm install
+---
 
-# Create .env file
-cp .env.example .env
+## 📋 Prerequisites
 
-# Update .env with your PostgreSQL credentials
-# DB_HOST=localhost
-# DB_PORT=5432
-# DB_USERNAME=postgres
-# DB_PASSWORD=postgres
-# DB_DATABASE=contact_management
-# JWT_SECRET=your-secret-key
+Before you begin, ensure you have the following installed:
 
-# Create database
-createdb contact_management
+- **Node.js** (v18 or higher) - [Download](https://nodejs.org/)
+- **PostgreSQL** (v14 or higher) - [Download](https://www.postgresql.org/download/)
+- **npm** or **yarn** - Package manager
+- **Git** - Version control
 
-# Run migrations (if using migrations)
-npm run migration:run
+---
 
-# Start the backend
-- npm run start:dev
+## 🚀 Installation
 
-Backend will run on http://localhost:4000
+### 1️⃣ Clone the Repository
 
-### 3. Frontend Setup
-- cd frontend
-- npm install
-
-# Create .env.local file
-echo "NEXT_PUBLIC_API_URL=http://localhost:4000/api" > .env.local
-
-# Start the frontend
-- npm run dev
-
-Frontend will run on http://localhost:3000
-
-## API Documentation
-
-### Authentication Endpoints
-
-**Register**
-\`\`\`
-POST /api/auth/register
-Body: { email, password }
-\`\`\`
-
-**Login**
-\`\`\`
-POST /api/auth/login
-Body: { email, password }
-\`\`\`
-
-### Contact Endpoints (Protected)
-
-**Create Contact**
-\`\`\`
-POST /api/contacts
-Headers: Authorization: Bearer <token>
-Body: FormData { name, email, phone, photo }
-\`\`\`
-
-**Get All Contacts**
-\`\`\`
-GET /api/contacts?page=1&limit=10&search=&sortBy=createdAt&sortOrder=DESC
-Headers: Authorization: Bearer <token>
-\`\`\`
-
-**Get Single Contact**
-\`\`\`
-GET /api/contacts/:id
-Headers: Authorization: Bearer <token>
-\`\`\`
-
-**Update Contact**
-\`\`\`
-PUT /api/contacts/:id
-Headers: Authorization: Bearer <token>
-Body: FormData { name, email, phone, photo }
-\`\`\`
-
-**Delete Contact**
-\`\`\`
-DELETE /api/contacts/:id
-Headers: Authorization: Bearer <token>
-\`\`\`
-
-## Default Users
-
-Create an admin user:
-\`\`\`bash
-# Register with role=admin in the request body
-POST /api/auth/register
-{
-  "email": "admin@example.com",
-  "password": "admin123",
-  "role": "admin"
-}
-\`\`\`
-
-## Project Structure
-
-\`\`\`
-backend/
-├── src/
-│   ├── auth/          # Authentication module
-│   ├── contacts/      # Contacts module
-│   ├── users/         # Users module
-│   ├── common/        # Shared utilities
-│   └── main.ts
-├── uploads/           # Uploaded files
-└── package.json
-
-frontend/
-├── src/
-│   ├── app/           # Next.js pages
-│   ├── components/    # React components
-│   ├── lib/           # Utilities
-│   └── store/         # State management
-└── package.json
-\`\`\`
-
-## Testing
-
-\`\`\`bash
-# Backend tests
-cd backend
-npm run test
-
-# Frontend tests
-cd frontend
-npm run test
-\`\`\`
-
-## Docker Support (Optional)
-
-\`\`\`bash
-docker-compose up
-\`\`\`
-
-## License
-
-MIT
+```bash
+git clone https://github.com/Clairazi/ContactManagementApplication.git
+cd ContactManagementApplication
