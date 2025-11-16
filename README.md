@@ -50,17 +50,17 @@ npm install
 Create `.env` file:
 
 ```env
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_USER=postgres
-DATABASE_PASSWORD=your_password
-DATABASE_NAME=contact_management
+NNODE_ENV=development
+PORT=4000
+FRONTEND_URL=http://localhost:3000
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=your_password
+DB_DATABASE=contact_management
 
 JWT_SECRET=your-secret-key
-JWT_EXPIRATION=24h
-
-PORT=4000
-NODE_ENV=development
 ```
 
 Create database:
@@ -89,7 +89,7 @@ npm install
 Create `.env.local` file:
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:4000
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
 ```
 
 Start frontend:
